@@ -17,7 +17,7 @@ console.log(typeof d) // date ka datatype object hota h
 let Nayi = new Date("1-14-2024") // indian format 
 console.log(Nayi.toLocaleString()) 
 
-let timestamp = Date.now() // means the no of milliseconds passed from 1970 when date was invented 
+let timestamp = Date.now() // means the no of milliseconds passed from 1970 when date was invented (date.now)
 console.log(timestamp) // current time in milliseconds 
 console.log(Nayi.getTime())
 console.log(Math.floor(Date.now()/1000)) // seconds m conversion krne k lie from milliseconds 
