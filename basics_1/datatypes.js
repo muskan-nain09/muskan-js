@@ -19,6 +19,22 @@ let age = 12
 let state = null
 let name; 
 
+let a = Symbol("123")
+let b = Symbol("123")
+
+console.log(a===b) // it will return false as symbols will make a and b unique so they won't be equal
+
+let obj = {        // objects 
+    name_n : "muskan",
+    age : 21
+} 
+
+const FUNction = function(){
+    console.log("hello world") ; 
+}
+const heroes = ['Batman', 'Spiderman', 'Ironman'] // arrays 
+
+
 // console.log(typeof "muskan")
 // console.log(typeof age)
 // console.log(typeof undefined) // return undefined for undefined type
