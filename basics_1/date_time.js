@@ -31,5 +31,5 @@ let date = new Date()
 
 date.toLocaleString("default", { // format kr skte h hum
     weekday : "long",
-    timeZone: ''
+    timeZone: 'UTC'
 })
