@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun games</title>
+</head>
+<body>
+    
+</body>
+<script>
+const div = document.createElement('div') // it will create container as div
+    console.log(div)
+    div.className = 'main' // it will create main claa in div container 
+    div.id = Math.round(Math.random() *10 +1) // it will give random id everytime u refresh
+    div.setAttribute("title","Muskan Nain") // this is preferred to jo doosre hote h jaise div.id and all they overwrite but set sidha assign krta so 2 step ki jgh ek step hota bs 
+
+    // div.innerText = "chai or code";
+    const addText = document.createTextNode("chai or code") // this is preferred than above {div.innerText = "chai or code";} because innerText replaces the existing value while append child doen't overwrite it 
+    div.appendChild(addText)
+
+    document.body.appendChild(div) // isse ye  body tag m jaega ir website live krne k baad website content m show hoga 
+
+</script>
+</html>
