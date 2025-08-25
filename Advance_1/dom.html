@@ -1,0 +1,56 @@
+ <!-- LEARN THE THEORY METHODS FROM NTBK   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom learning</title>
+    <style>
+        .Learn {
+            background-color: pink;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="Learn">  
+    <div>
+        <h1 id="title" class="heading">Dom Learning on Youtube <span style= "display: none;">testing</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+
+</html>
+
+<!-- console m browser k jaake :
+ document.getElementById("title") // yeh iss element id ki saari cheeze dedega
+ document.getElementById("title").id
+ document.getElementById("title").className and not .class ye (.class) undefined return krega
+ 
+ document.getElementById("title").getAttribute("class") ek ye tarika bhi h access krne ka 
+ document.getElementById("title").setAttribute("class", "test") -- yeh humesha overwrite krega console m undefined dikhaega pr end m change ho jata h jab check krte h code mai
+ 
+ console mai ye bhi kr skte ho .. style dene k liye to ur webpage 
+ 
+ const title = document.getElementById("title") //  sbse pehle isko kahi kisi variable m store krna h lekin
+ title.style.backgroundcolor = 'green' 
+ title.style.padding = '15px' 
+ 
+ // -->
+
+ <!-- textContent and innerText m difference
+  
+ agar humne inner css ka use krke koi text content ko hide krdiya to textContent fr bhi pura text bataega hide nai krega but innerText krdega 
+ 
+ example:  <h1 id="title" class="heading">Dom Learning on Youtube <span style= "display: none;">testing</span></h1> // isme hidden wala hide nahi hoga if textContent command use ki to
+
+ $$$$$$$$$$$$$$$$$$ innerHTML - Jo HTML h usme vo bhi show hogaa saath ki sath along with the text 
+
+ document.getElementsByClassName('heading') ==> gives HTML collection  
+
+ document.querySelector("h1") -- yeh ek hi h1 wala return krega chahe kitne hi h1 present ho 
+ document.querySelector("#title") -- is id k element
+ document.querySelector(".heading") -- iss class k element
+   -->
