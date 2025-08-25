@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding</title>
+</head>
+<body>
+    <ul class="languages">
+        <li>Javascript language</li>
+    </ul>
+</body>
+<script>
+    function adding(lang){ // AGAR HUME LIST BANANI H WE CAN EASILY USE FUNCTION
+       const li=  document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.languages').appendChild(li)
+    }
+    adding("python")
+    adding("CSS") // inhe hum jitni baar add krenge pura tree add krne k liye frse traverse hoga joki optimization issue dedeta h so what we have to do is 
+
+    function optimization(Lang){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(Lang))
+        document.querySelector('.languages').appendChild(li)
+    }
+
+    optimization("typescript")
+    optimization("c++")
+
+    // HOW TO EDIT VALUES: 
+
+    const change = document.querySelector('li: nth-child[0]') //  it will select this child 
+    // change.innerHTML = "Django"
+
+    const n1 = createElement("li") // method 2 
+    n1.textContent = "Mojo"
+    change.replaceWith('n1') // ye bhi use hota h edit ka
+
+    const First = document.querySelector('li:first-child')
+    First.outerHTML = '<li>TYPESCRIPT</li>'
+
+    // REMOVE CHILD:
+
+    const Last = document.querySelector('li:last-child')
+    Last.remove()
+
+</script>
+</html>
