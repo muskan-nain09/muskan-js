@@ -68,6 +68,13 @@ form.addEventListener('submit',function(e){
 
 ``` javascript
 
+const clock = document.querySelector("#clock")
+
+setInterval(function(){
+let date =new Date()
+// console.log(date.toLocaleTimeString()) // used to work in console
+clock.innerHTML=date.toLocaleTimeString() // used to show on screen
+},1000)
 
 ```
 
