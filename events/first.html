@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Js</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images"> 
+            <!-- just normal uthaye h from chai and code repos -->
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>>
+</body>
+<script>
+
+    // document.getElementById('owl').onclick = function(){ // method 1 for even 
+    //     alert("Owl is being clicked")
+    // }
+
+    // method 2 - Jquery - .on (traditional method)
+    //method 3 - attachEvent - when internet explorer was rare and difficult // again traditional method
+
+    document.getElementById('owl').addEventListener('click',function(e){
+            console.log("e") // when owl is clicked console gives properties of id - owl image  
+    },false)  // false default value hoti h kayi baar iske bina code nhi chlte 
+
+
+    
+    // type, timestamp, defaultPrevented     -------------------------------> need to know about them
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode 
+
+
+    // Event bubbling and event Capturing
+
+    document.getElementById('images').addEventListener('click',function(e){
+            console.log("clicked inside url") // when owl is clicked console gives properties of id - owl image  
+    },false)
+
+    document.getElementById('owl').addEventListener('click',function(e){
+            console.log("owl clicked") // when owl is clicked console gives properties of id - owl image  
+            e.stopPropagation() // event bubble hoke upr wale p nhi jaega only owl ckicked print hoga 
+    },false) // false h to bubbling  means bottom to top ki approach and it is default
+
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault()   // default action is prevented
+        console.log("google is being clicked") 
+    },false)
+
+    //-------------------------------------------------------------------------------------------------
+ // for not selecting image one by one : // but vanishing ul 
+ document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e) // jo image pr click krenge uski and all the metadata like time stamp and all
+    console.log(e.target) // tells the target from which that event happend // just the DOM event where element happened 
+    console.log(e.target.parentNode) // tells the parent node of the event
+
+    
+    let removed = e.target.parentNode
+    remove.remove() // it will remove when we click that image but also agar humne image k alava kahi or click kra sb remove hoga kyunki kahi or click krenge to li count hoga or uska parent ul to pura ul remove hojaega 
+
+    
+ },false) 
+ 
+ // ----------------------------------------------------------------------------------------------------------------
+
+ // to solve problem of vanishing whole ul container addressed above 
+
+  document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    
+        
+    })
+
+
+// jab ye false ki jgh true hoga tab hoga event capturing means top to bottom approach
+//  false k case m output if owl is clicked - owl clicked, clicked inside  url
+// true k case m output if owl is clicked = clicked inside url , owl clicked
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout functions </title>
+</head>
+<body>
+    <h1> Muskan Nain experiments</h1>  
+    <button id="but">Stop</button> 
+</body>
+<script>
+    setTimeout(function(){ //method 1 
+        console.log("muskan") // yeh 2 sec baad console window m show hoga 
+    },2000)
+
+    // method 2
+
+    const Name = function(){
+        console.log("muskan nain")
+    }
+
+    setTimeout(Name,2000) // function pass ni krna uska reference pass krna h
+
+    //incase hume heading badalni h
+
+    const change = function(){
+        document.querySelector("h1").innerHTML="Muskan's experiments"
+    }
+    setTimeout(change,2000) // 2 sec k baad u will see changed title on website
+
+    // now to stop what u started --------------------------------------------
+
+       const CHANGE = setTimeout(change,2000)
+       document.querySelector('#but').addEventListener('click',function(){
+        clearTimeout(CHANGE)
+        console.log("stopped")
+       })
+    
+</script>
+</html>
