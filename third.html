@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript time codes</title>
+</head>
+<body>
+    <h1>Muskan Nain Js experiments</h1>
+    <button id= butt>Start</button>
+    <button id="but">Stop</button>
+</body>
+<script>
+    setInterval(function(){ // ab har 2 second vo timer change hoga or console 
+        console.log("muskan")
+    },2000)
+
+    // ab agar hume current timestamp chahie to: 
+
+    const change = function(){
+        console.log('muskan',Date.now())
+    }
+    setInterval(change,1000)
+
+    // another method we can use is : 
+
+    const change2 = function(str){
+        console.log(str, Date.now())
+    }
+
+    setInterval(change2,1000,'muskan') // ye third parameter bhi hota h setInterval m jo as str act krega function m
+
+    const id = setInterval(change2,1000,'muskan')
+    clearInterval(id) // ye clear interval krdega
+</script>
+</html>
