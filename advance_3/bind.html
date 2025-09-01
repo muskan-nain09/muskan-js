@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Button is clicked</button>
+</body>
+<script>
+    class Bind{
+        constructor(){
+               this.server = 'https://localhost:300'
+               this.library = "react.js"
+
+               // requirement 
+               document.queryselector('button').addEventListener('click',this.handleClick.bind(this)) // ye server wali info bhi pass krega bind means attach krdiya means handleclick chlega uske baad bind ko attach krke this bhi chlwa diya
+        }
+        
+        
+        handleClick(){
+            console.log("button clicked")
+            console.log(this.server)
+        }
+    }
+    const obj = new Bind()
+</script>
+</html>
