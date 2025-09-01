@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures and all</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function outer(){ // yeh lexical concept smjhaega
+    //     let username = 'muskan'
+
+    //     function inner(){
+    //         let secret_pass = '12342'
+    //         console.log("inner function",username)
+    //     }
+    //     function inner2(){
+    //         console.log("inner two" ,username) // this can be shared as it is from outer function
+    //         console.log(secret_pass) // isme error aaega kyunki siblings can't share and also outer also can't access it 
+    //     }
+    //    inner()
+    // }
+
+    // outer() 
+    // console.log("outer",username) // it won't work kyunki ye function k scope se bahar h to browser k console pr gadbad dega 
+
+
+    //****************************************** closure 
+
+    //     function makeFunc() { 
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc(); // jab humne ye kiya to makefunc ka pura lexical scope jaega means jo bhi function interconnected bhi hue vo bhi print honge yaha naaki sirf displayname as vahi return hua h to yahi sochte h sabhi
+    // myFunc();
+
+</script>
+
+<script>
+    //practical example of lexical scope and closures 
+    //  document.getElementById("orange").onclick = function(){ it's a repitive process 
+    //     document.body.style.backgroundColor = 'orange'
+    //  }
+
+    //  document.getElementById("green").onclick= function(){
+    //     document.body.style.backgroundColor ='green'
+    //  }
+
+    //**** instead do this: 
+
+    function colorcoding(color){
+        // document.body.style.backgroundColor = `${color}` isse jab bhi hum onclick lagaenge to it will give color as it is without clicking sidha execute hojaega
+
+       return function(){
+         document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = colorcoding('orange')
+    document.getElementById('green').onclick = colorcoding('green')
+
+
+</script>
+</html>
+</html>
